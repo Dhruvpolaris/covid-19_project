@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ],
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 20),
+                          margin: EdgeInsets.only(top: 20.0,bottom: 30.0),
                           padding: EdgeInsets.all(5),
                           height: 178,
                           width: double.infinity,

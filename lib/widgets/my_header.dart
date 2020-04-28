@@ -23,7 +23,7 @@ class _MyHeaderState extends State<MyHeader> {
     return ClipPath(
       clipper: MyClipper(),
       child: Container(
-        padding: EdgeInsets.only(left: 20, top: 35, right: 20),
+        padding: EdgeInsets.only(left: 20, top: 45, right: 20),
         height: 350,
         width: double.infinity,
         decoration: BoxDecoration(
