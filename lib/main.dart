@@ -1,14 +1,16 @@
-import './widgets/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:async';
-import './constant.dart';
-import './widgets/counter.dart';
-import './widgets/my_header.dart';
-
 import 'package:intl/intl.dart';
+import 'dart:async';
+
 import './providers/data.dart';
 
+import './constant.dart';
+
+import './widgets/counter.dart';
+import './widgets/my_header.dart';
+import './widgets/details_screen.dart';
+// import './widgets/searchbar.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,6 +35,7 @@ class MyApp extends StatelessWidget {
             body1: TextStyle(color: dBodyTextColor),
           )),
       home: MyHomePage(),
+      // home: DetailsScreen(),
     );
   }
 }
@@ -69,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,12 +100,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               "COVID-19 Cases Overview",
                               style: dHeadingTextStyle,
                             ),
-                            SizedBox(height: 3.0,),
+                            SizedBox(
+                              height: 3.0,
+                            ),
                             Text(
-                              "Updated: "+formattedDate,
+                              "Updated: " + formattedDate,
                               style: TextStyle(
-                                      color: dTextLightColor,
-                                    ),
+                                color: dTextLightColor,
+                              ),
                             ),
                             // Spacer(),
                             // FlatButton(
@@ -201,17 +205,29 @@ class _MyHomePageState extends State<MyHomePage> {
                               "Mapping the Spread",
                               style: dTitleTextstyle,
                             ),
-                            Text(
-                              "View details",
-                              style: TextStyle(
-                                color: dPrimaryColor,
-                                fontWeight: FontWeight.w600,
+                            FlatButton(
+                              child: Text(
+                                "View Details",
+                                style: TextStyle(
+                                  color: dPrimaryColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) {
+                                      return DetailsScreen();
+                                    },
+                                  ),
+                                );
+                              },
                             ),
                           ],
                         ),
                         Container(
-                          margin: EdgeInsets.only(top: 20.0,bottom: 30.0),
+                          margin: EdgeInsets.only(top: 20.0, bottom: 30.0),
                           padding: EdgeInsets.all(5),
                           height: 178,
                           width: double.infinity,
@@ -275,7 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 CircularProgressIndicator(),
                 SizedBox(height: 20),
-                Text('Fetching Data..')
+                Text('Getting the latest data.')
               ],
             ),
           );
