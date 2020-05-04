@@ -1,16 +1,15 @@
-# covid19_project
+# Flutter UI COVID-19 Project.
+### - Application for the Latest COVID-19 Updates and Awareness (Symptoms and Prevention).
 
-A new Flutter project.
+<p align="center"> 
+<img width="350" height="600" src="https://github.com/Dhruvpolaris/flutter_ui_healthyFood/blob/master/final_output.gif">
+</p>
 
-## Getting Started
+## Components used:
+1. Datatable
+2. FutureBuilder
+3. API (JSON Decode) (https://api.covid19api.com/summary)
 
-This project is a starting point for a Flutter application.
+### Download Zip/Clone:
+flutter run
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
