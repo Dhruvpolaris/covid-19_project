@@ -84,10 +84,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 children: <Widget>[
                   MyHeader(
-                    image: "assets/icons/Drcorona.svg",
+                    image: "assets/icons/stayHome.svg",
                     iconleft: false,
-                    textTop: "Stay Home",
-                    textBottom: "Stay Safe",
+                    textTop: "Stay\nHome.",
+                    textBottom: "Stay\nSafe.",
                     offset: offset,
                   ),
                   Padding(
@@ -161,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               SizedBox(height: 20.0),
                               Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Counter(
                                     color: Colors.red.shade900,

@@ -62,8 +62,8 @@ class _MyHeaderState extends State<MyHeader> {
                     ),
                   ),
                   Positioned(
-                    top: 20 - widget.offset / 2,
-                    left: 150,
+                    top: 35 - widget.offset / 2,
+                    left: 230,
                     child: Padding(
                       padding: const EdgeInsets.only(top:10.0),
                       child: Text(
@@ -74,7 +74,7 @@ class _MyHeaderState extends State<MyHeader> {
                       ),
                     ),
                   ),
-                  Container(), // I dont know why it can't work without container
+                  Container(), //required
                 ],
               ),
             ),
@@ -108,9 +108,10 @@ class _MyHeaderState extends State<MyHeader> {
                       alignment: Alignment.topCenter,
                     ),
                   ),
+                  SizedBox(width:20),
                   Positioned(
-                    top: 20 - widget.offset / 2,
-                    left: 150,
+                    top: 15 - widget.offset / 2,
+                    left: 240,
                     child: Padding(
                       padding: const EdgeInsets.only(top:20.0),
                       child: Text(
@@ -121,7 +122,7 @@ class _MyHeaderState extends State<MyHeader> {
                       ),
                     ),
                   ),
-                  Container(), // I dont know why it can't work without container
+                  Container(), // required
                 ],
               ),
             ),

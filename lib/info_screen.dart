@@ -1,7 +1,6 @@
 import './constant.dart';
 import './widgets/my_header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class InfoScreen extends StatefulWidget {
   @override
@@ -40,8 +39,8 @@ class _InfoScreenState extends State<InfoScreen> {
           children: <Widget>[
             MyHeader(
               image: "assets/icons/coronadr.svg",
-              textTop: "Information",
-              textBottom: "about Covid-19",
+              textTop: "Covid-19",
+              textBottom: "Details",
               iconleft: true,
               offset: offset,
             ),
@@ -67,17 +66,17 @@ class _InfoScreenState extends State<InfoScreen> {
                             title: "Headache",
                             // isActive: true,
                           ),
-                          SizedBox(width:15),
+                          SizedBox(width: 15),
                           SymptomCard(
                             image: "assets/images/cough.png",
                             title: "Cough",
                           ),
-                          SizedBox(width:15),
+                          SizedBox(width: 15),
                           SymptomCard(
                             image: "assets/images/fever.png",
                             title: "Fever",
                           ),
-                          SizedBox(width:15),
+                          SizedBox(width: 15),
                           SymptomCard(
                             image: "assets/images/headache.png",
                             title: "Tiredness",
@@ -91,17 +90,35 @@ class _InfoScreenState extends State<InfoScreen> {
                   SizedBox(height: 20),
                   PreventCard(
                     text:
-                        "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
-                    image: "assets/images/wear_mask.png",
-                    title: "Wear face mask",
+                        "Avoid going to crowded places where people come together in crowds.",
+                    image: "assets/images/stayhome.png",
+                    title: "STAY HOME \nSave Lives",
+                  ),
+                   PreventCard(
+                    text:
+                        "Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.",
+                    image: "assets/images/covercough.png",
+                    title: "COVER \nyour cough",
                   ),
                   PreventCard(
                     text:
-                        "Since the start of the coronavirus outbreak some places have fully embraced wearing facemasks",
-                    image: "assets/images/wash_hands.png",
-                    title: "Wash your hands",
+                        "Maintain a safe distance (at least 1 meter) from anyone who is coughing or sneezing.",
+                    image: "assets/images/distance.png",
+                    title: "KEEP \nsafe distance",
                   ),
-                  SizedBox(height: 50),
+                  PreventCard(
+                    text:
+                        "Clean your hands often. Use soap and water, or an alcohol-based hand sanitizer.",
+                    image: "assets/images/washhands.png",
+                    title: "WASH \nhands often",
+                  ),
+                  PreventCard(
+                    text:
+                        "If you have a fever, a cough, and difficulty breathing, seek medical attention. CALL !",
+                    image: "assets/images/sick.png",
+                    title: "SICK? \nCall helpline",
+                  ),
+                  SizedBox(height: 20),
                 ],
               ),
             )
@@ -128,12 +145,12 @@ class PreventCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: SizedBox(
-        height: 156,
+        height: 160,
         child: Stack(
           alignment: Alignment.centerLeft,
           children: <Widget>[
             Container(
-              height: 136,
+              height: 135,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -147,12 +164,15 @@ class PreventCard extends StatelessWidget {
                 ],
               ),
             ),
-            Image.asset(image),
+            Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
             Positioned(
-              left: 130,
+              left: 150,
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                height: 136,
+                height: 145,
                 width: MediaQuery.of(context).size.width - 170,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -174,10 +194,10 @@ class PreventCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: SvgPicture.asset("assets/icons/forward.svg"),
-                    ),
+                    // Align(
+                    //   alignment: Alignment.topRight,
+                    //   child: SvgPicture.asset("assets/icons/forward.svg"),
+                    // ),
                   ],
                 ),
               ),

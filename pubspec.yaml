@@ -27,11 +27,16 @@ dependencies:
   flutter_svg: ^0.17.4
   intl: ^0.16.1
   data_tables: ^1.0.3
+  flutter_launcher_icons: ^0.7.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  image_path: "assets/icons/appicon.png" 
+  android: true
+  ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

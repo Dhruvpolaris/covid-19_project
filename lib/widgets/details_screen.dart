@@ -100,8 +100,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 children: <Widget>[
                   MyHeader(
                     image: "assets/icons/world.svg",
-                    textTop: "",
-                    textBottom: "",
+                    textTop: "COVID-19",
+                    textBottom: "Spread",
                     iconleft: true,
                     offset: offset,
                   ),
@@ -115,7 +115,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: DataTable(
-                          sortColumnIndex: 1,
+                          sortColumnIndex: 0,
                           sortAscending: true,
                           columns: [
                             DataColumn(
@@ -201,18 +201,25 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                 (country) => DataRow(
                                   cells: [
                                     DataCell(
-                                      Text(
-                                        country.country,
-                                        softWrap: true,
-                                        style: TextStyle(fontWeight: FontWeight.w600),
+                                      Container(
+                                        width: 100,
+                                        child: Text(
+                                          country.country,
+                                          softWrap: true,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: TextStyle(fontWeight: FontWeight.w600),
+                                        ),
                                       ),
                                     ),
                                     DataCell(
-                                      Center(
-                                        child: Text(
-                                          country.totalConfirmed.toString(),
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
+                                      Container(
+                                        width: 60.0,
+                                        child: Center(
+                                          child: Text(
+                                            country.totalConfirmed.toString(),
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ),
                                       ),
                                     ),
